@@ -1,0 +1,163 @@
+{
+    "bindings":  [
+                     {
+                         "arguments":  {
+
+                                       },
+                         "destination":  "q.auditoria",
+                         "destination_type":  "queue",
+                         "routing_key":  "#",
+                         "source":  "oficina.events",
+                         "vhost":  "/"
+                     },
+                     {
+                         "arguments":  {
+
+                                       },
+                         "destination":  "q.caixa",
+                         "destination_type":  "queue",
+                         "routing_key":  "financeiro.*",
+                         "source":  "oficina.events",
+                         "vhost":  "/"
+                     },
+                     {
+                         "arguments":  {
+
+                                       },
+                         "destination":  "q.atendimento",
+                         "destination_type":  "queue",
+                         "routing_key":  "financeiro.estornado",
+                         "source":  "oficina.events",
+                         "vhost":  "/"
+                     },
+                     {
+                         "arguments":  {
+
+                                       },
+                         "destination":  "q.atendimento",
+                         "destination_type":  "queue",
+                         "routing_key":  "os.cancelada",
+                         "source":  "oficina.events",
+                         "vhost":  "/"
+                     },
+                     {
+                         "arguments":  {
+
+                                       },
+                         "destination":  "q.atendimento",
+                         "destination_type":  "queue",
+                         "routing_key":  "os.concluida",
+                         "source":  "oficina.events",
+                         "vhost":  "/"
+                     },
+                     {
+                         "arguments":  {
+
+                                       },
+                         "destination":  "q.garantia",
+                         "destination_type":  "queue",
+                         "routing_key":  "os.concluida",
+                         "source":  "oficina.events",
+                         "vhost":  "/"
+                     },
+                     {
+                         "arguments":  {
+
+                                       },
+                         "destination":  "q.pos-venda",
+                         "destination_type":  "queue",
+                         "routing_key":  "os.concluida",
+                         "source":  "oficina.events",
+                         "vhost":  "/"
+                     }
+                 ],
+    "queues":  [
+                   {
+                       "arguments":  {
+
+                                     },
+                       "auto_delete":  false,
+                       "durable":  true,
+                       "name":  "q.pos-venda",
+                       "type":  "classic",
+                       "vhost":  "/"
+                   },
+                   {
+                       "arguments":  {
+
+                                     },
+                       "auto_delete":  false,
+                       "durable":  true,
+                       "name":  "q.caixa",
+                       "type":  "classic",
+                       "vhost":  "/"
+                   },
+                   {
+                       "arguments":  {
+
+                                     },
+                       "auto_delete":  false,
+                       "durable":  true,
+                       "name":  "q.auditoria",
+                       "type":  "classic",
+                       "vhost":  "/"
+                   },
+                   {
+                       "arguments":  {
+
+                                     },
+                       "auto_delete":  false,
+                       "durable":  true,
+                       "name":  "q.atendimento",
+                       "type":  "classic",
+                       "vhost":  "/"
+                   },
+                   {
+                       "arguments":  {
+
+                                     },
+                       "auto_delete":  false,
+                       "durable":  true,
+                       "name":  "q.garantia",
+                       "type":  "classic",
+                       "vhost":  "/"
+                   }
+               ],
+    "parameters":  [
+
+                   ],
+    "policies":  [
+
+                 ],
+    "rabbitmq_version":  "3.13.7",
+    "rabbit_version":  "3.13.7",
+    "exchanges":  [
+                      {
+                          "arguments":  {
+
+                                        },
+                          "auto_delete":  false,
+                          "durable":  true,
+                          "name":  "oficina.events",
+                          "type":  "topic",
+                          "vhost":  "/"
+                      }
+                  ],
+    "vhosts":  [
+                   {
+                       "limits":  [
+
+                                  ],
+                       "metadata":  {
+                                        "description":  "Default virtual host",
+                                        "tags":  [
+
+                                                 ]
+                                    },
+                       "name":  "/"
+                   }
+               ],
+    "global_parameters":  [
+
+                          ]
+}

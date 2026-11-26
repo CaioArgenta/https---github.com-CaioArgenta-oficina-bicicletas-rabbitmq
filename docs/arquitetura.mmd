@@ -1,0 +1,19 @@
+flowchart TD
+ P[API Produtora] --> X((Topic Exchange oficina.events))
+ X -->|os.concluida| GQ[q.garantia]
+ X -->|os.* e financeiro.estornado| AQ[q.atendimento]
+ X -->|financeiro.*| CQ[q.caixa]
+ X -->|#| UQ[q.auditoria]
+ X -->|os.concluida| PQ[q.pos-venda]
+ GQ --> G[Garantia]
+ AQ --> A[Atendimento]
+ CQ --> C[Caixa]
+ UQ --> U[Auditoria]
+ PQ --> P1[Pós-venda 1]
+ PQ --> P2[Pós-venda 2]
+ G --> DB[(PostgreSQL)]
+ A --> DB
+ C --> DB
+ U --> DB
+ P1 --> DB
+ P2 --> DB

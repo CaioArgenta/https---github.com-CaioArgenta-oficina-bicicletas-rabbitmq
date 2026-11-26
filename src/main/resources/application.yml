@@ -1,0 +1,25 @@
+server:
+  port: ${SERVER_PORT:8080}
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://127.0.0.1:5433/oficina}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+
+  sql:
+    init:
+      mode: always
+
+  rabbitmq:
+    host: ${RABBIT_HOST:127.0.0.1}
+    port: ${RABBIT_PORT:5673}
+    username: ${RABBIT_USER}
+    password: ${RABBIT_PASSWORD}
+
+    listener:
+      simple:
+        acknowledge-mode: manual
+
+app:
+  role: ${APP_ROLE:producer}
